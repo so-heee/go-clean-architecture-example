@@ -1,0 +1,33 @@
+version: '3.5'
+
+services:
+  echo:
+    container_name: echo
+    build:
+      context: .
+      dockerfile: ./docker/api/Dockerfile
+      target: build
+    volumes:
+      - ./api:/go/src/github.com/so-heee/golang_echo_example/api
+    ports:
+      - "1323:1323"
+    command: realize start --run --no-config
+  mysql:
+    container_name: mysql
+    build:
+      context: .
+      dockerfile: ./docker/mysql/Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sample
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+      TZ: 'Asia/Tokyo'
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/initdb.d:/docker-entrypoint-initdb.d
+      - ./mysql/conf.d:/etc/mysql/conf.d
+      - ./mysql/log/mysql:/var/log/mysql
+    ports:
+      - "3306:3306"
