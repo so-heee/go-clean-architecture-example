@@ -4,7 +4,7 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 
-	"github.com/so-heee/golang_echo_example/api/interfaces/database"
+	"github.com/so-heee/golang-clean-architecture-example/api/interfaces/database"
 )
 
 type SqlHandler struct {

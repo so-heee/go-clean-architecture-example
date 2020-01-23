@@ -1,11 +1,9 @@
 package infrastructure
 
 import (
-	"net/http"
-
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
-	"github.com/so-heee/golang_echo_example/api/interfaces/controllers"
+	"github.com/so-heee/golang-clean-architecture-example/api/interfaces/controllers"
 )
 
 func Init() {

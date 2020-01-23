@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/so-heee/golang_echo_example/api/infrastructure"
+	"github.com/so-heee/golang-clean-architecture-example/api/infrastructure"
 )
 
 func main() {

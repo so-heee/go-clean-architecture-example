@@ -8,7 +8,7 @@ services:
       dockerfile: ./docker/api/Dockerfile
       target: build
     volumes:
-      - ./api:/go/src/github.com/so-heee/golang_echo_example/api
+      - ./api:/go/src/github.com/so-heee/golang-clean-architecture-example/api
     ports:
       - "1323:1323"
     command: realize start --run --no-config
